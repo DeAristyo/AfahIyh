@@ -123,7 +123,7 @@ struct GameDialoque: View {
             .onTapGesture {
                 if words < convo.count-1{
                     kalimat()
-                    print("Masih di kalimat")
+                    print("Masih di kalimat ya bro")
                 }else if questions == ""{
                     print("Go To Intro")
                     words = 0
