@@ -1,16 +1,16 @@
 //
-//  GameDialoque.swift
+//  HintsDialoque.swift
 //  AfahIyh
 //
-//  Created by Dimas Aristyo Rahadian on 18/04/23.
+//  Created by Dimas Aristyo Rahadian on 19/04/23.
 //
 
 import SwiftUI
 
-struct GameDialoque: View {
+struct WrongDialoque: View {
     
     @State private var navigateToIntro : Bool = false
-    @State private var navigateToQuestion : Bool = false
+    @State private var navigateToHints : Bool = false
     @State private var nama = true
     @State private var words : Int = 0
     @State private var scene : Int = 0
@@ -72,10 +72,9 @@ struct GameDialoque: View {
     
     
     var body: some View {
-        let BG = scene == 1 || scene == 5 || scene == 6 || scene == 7 ? "KoperasiBG" : "Background"
+        let BG = indeks <= 4 ? "Background" : "KoperasiBG"
         
-        let convo = AllData[indeks].Convo
-        let questions = AllData[indeks].Questions
+        let wrong = AllData[indeks].Answers.Wrong
         
         ZStack {
             Image(BG)
@@ -84,7 +83,6 @@ struct GameDialoque: View {
                 .offset(x: 0, y: 60)
             
             HStack{
-                if nama {
                     Image("AndiHalf")
                         .scaleEffect(0.3)
                         .offset(x:25, y: -25)
@@ -92,18 +90,6 @@ struct GameDialoque: View {
                         .scaleEffect(0.2)
                         .scaleEffect(x: -1)
                         .brightness(-0.3)
-                }else{
-                    Image("AndiHalf")
-                        .scaleEffect(0.2)
-                        .brightness(-0.3)
-                        .offset(x:25, y: -25)
-                    Image(secondChar)
-                        .scaleEffect(0.3)
-                        .scaleEffect(x: -1)
-                        .offset(x:0, y:-25)
-                    
-                }
-                
             }
             HStack{
                 RoundedRectangle(cornerRadius: 20)
@@ -112,14 +98,13 @@ struct GameDialoque: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .fill(Color.yellow)
                         .overlay(
-                            Text(convo[words])
+                            Text(wrong)
                                 .font(.system(size: 26 )).multilineTextAlignment(.center).padding(15)
                         )
                     )
             }.offset(x:0,y:101)
             
             HStack{
-                if nama{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white)
                         .frame(width: 120,height: 40)
@@ -129,47 +114,19 @@ struct GameDialoque: View {
                                 .font(.system(size:18))
                                 .fontWeight(.bold))
                         .offset(x:-185,y:35)
-                }else{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .frame(width: 120,height: 40)
-                        .shadow(radius:3)
-                        .overlay(
-                            Text(charName)
-                                .font(.system(size:14))
-                                .fontWeight(.bold))
-                        .offset(x:185,y:35)
-                }
             }
         }
         .onTapGesture {
-            if words < convo.count-1{
-                kalimat()
-                print("Masih di kalimat ya bro")
-            }else if questions == ""{
-                print("Go To Intro")
-                words = 0
-                indeks += 1
-                path.removeAll()
-            }else{
-                print("Go To Question")
-                self.navigateToQuestion.toggle()
-                words = 0
-            }
+            self.navigateToHints.toggle()
         }
-        .navigationDestination(isPresented: $navigateToQuestion) {
-            QuestionView(indeks: $indeks, path: $path).navigationBarBackButtonHidden()
+        .navigationDestination(isPresented: $navigateToHints) {
+            HintsView(indeks: $indeks, path: $path).navigationBarBackButtonHidden()
         }
-    }
-    
-    func kalimat(){
-        self.nama.toggle()
-        self.words += 1
     }
 }
 
-struct GameDialoque_Previews: PreviewProvider {
+struct WrongDialoque_Previews: PreviewProvider {
     static var previews: some View {
-        GameDialoque(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeRight)
+        WrongDialoque(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeLeft)
     }
 }

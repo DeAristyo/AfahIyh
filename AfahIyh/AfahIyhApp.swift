@@ -11,9 +11,7 @@ import SwiftUI
 struct AfahIyhApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationStack{
-                ContentView()
-            }
+                IntroContent().preferredColorScheme(.light)
         }
     }
 }

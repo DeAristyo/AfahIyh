@@ -10,9 +10,11 @@
             "Siap, Pak. Saya jalan dulu yah. Dadah…"
         ],
         "Questions" : "",
+        "RAnswers": "",
         "Answers": {
             "Wrong": "",
             "Hint": "",
+            "RiAnswers" : "",
             "End": ""
         },
         "ConvEnd": [""],
@@ -21,6 +23,34 @@
     
     {
         "id": 2,
+        "Opening": "Sesampainya di kantin, Andi bergegas menuju ke meja kasir dan membeli pensil untuk ujian di sekolah besok",
+        "Convo": [
+            "Permisi. Beli...Beli...",
+            "Iya. Beli apa, Nak?",
+            "Beli Pensil, Bu",
+            "Beli berapa, Nak? Satunya Rp1.000",
+            "Ehmmm saya beli Rp6.000 saja, Bu",
+            "Ini, Nak. Pensilnya 5"
+        ],
+        "Questions": "Hmmm…harga 1 Pensil✏️ = Rp1.000 dan saya ingin membeli pensil sebanyak Rp6.000. Apakah saya akan mendapatkan 5 pensil?",
+        "RAnswers": "Salah",
+        "Answers": {
+            "Wrong": "Ok, Bu. Ini uangnya Rp6.000",
+            "Hint": "Coba kamu pikirkan lagi, harga 1 Pensil✏️ = Rp1.000. Jika kamu beli sebanyak Rp6.000, maka ada 1 Pensil✏️+ 1 Pensil✏️+ 1 Pensil✏️+ 1 Pensil✏️+ 1 Pensil✏️+ 1 Pensil✏️. Apakah jumlahnya ada 5 pensil?",
+            "RiAnswers": "Salah",
+            "End": "Ya udah, pulang gih, belajar yang lebih giat lagi ya"
+        },
+        "ConvEnd": [
+            "Kok 5 pensil, Bu? Bukannya dapat 6 pensil yah?",
+            "Oh iya, saya salah hitung, Nak. Pintar sekali kamu, ini pensilnya ada 6",
+            "Ah Ibu bisa saja. Terima kasih, Bu. Semoga jualannya lancar",
+        ],
+        "GameClosing": ""
+        
+    },
+    
+    {
+        "id": 3,
         "Opening": "Dari kantin, Andi mendengar suara penjual es krim dorong yang mendekat. Andi pun langsung menuju gerbang sekolah menghampiri penjual es krim",
         "Convo": [
             "Aduh panas banget..",
@@ -30,14 +60,16 @@
             "Kalau begitu saya beli 3 es loli dan 2 es krim cup",
             "Berarti total harganya jadi berapa, Dek?"
         ],
-        "Questions": "Jika harga 1 Es Loli🍦 = Rp1.000 dan harga 1 Es Krim Cup🍨 = Rp3.000. Saya harus bayar berapa yah jika saya membeli 3 Es Loli dan 2 Es Krim Cup?",
+        "Questions": "Jika harga 1 Es Loli🍦 = Rp1.000 dan harga 1 Es Krim Cup🍨 = Rp3.000, dan aku membeli 3 Es Loli dan 2 Es Krim Cup. Apakah total yang harus aku bayar Rp9.000?",
+        "RAnswers": "Benar",
         "Answers": {
             "Wrong": "Total harganya Rp10.000, Mbak",
-            "Hint": "Coba hitung dengan seksama, Harga 1 Es Loli🍦 = Rp1.000, maka harga 3 Es Loli🍦 = 3 x Rp1.000 Harga 1 Es Krim Cup🍨 = Rp3.000, maka harga 2 Es Krim Cup🍨 = 2 x Rp3.000 Apakah harga 3 Es Loli🍦 + 2 Es Krim Cup🍨= Rp10.000?",
+            "Hint": "Coba hitung dengan seksama, Harga 1 Es Loli🍦 = Rp1.000, maka harga 3 Es Loli🍦 = 3 x Rp1.000 Harga 1 Es Krim Cup🍨 = Rp3.000, maka harga 2 Es Krim Cup🍨 = 2 x Rp3.000. Apakah harga 3 Es Loli🍦 + 2 Es Krim Cup🍨= Rp10.000?",
+            "RiAnswers": "Salah",
             "End": "Ok. Kalau begitu sini uangnya, lain kali belajar yang baik yah"
         },
         "ConvEnd": [
-            "Harganya Rp10.000, Mbak",
+            "Benar. Harganya Rp9.000, Mbak",
             "Wah pintar banget kamu, Dek. Kamu makan apa sampai bisa pintar gitu?",
             "Es krim dari Mbak",
             "Ih bisa aja kamu"
@@ -47,22 +79,22 @@
     },
     
     {
-        "id": 3,
-        "Opening": "Andi sangat senang bisa membeli es krim hari ini. Sambil tersenyum, Andi bergegas kembali ke rumah. Namun di tengah jalan, dia bertemu dengan teman kelasnya, Ratna dan Susi",
+        "id": 4,
+        "Opening": "Andi sangat senang bisa membeli es krim hari ini. Sambil tersenyum, Andi bergegas kembali ke rumah. Namun di tengah jalan, dia bertemu dengan teman kelasnya, Ratna",
         "Convo": [
-            "Hai Ratna! Hai Susi! Sedang apa kalian?",
-            "Hai Andi! Kami mau beli alat tulis untuk ujian besok",
-            "Kamu sudah beli, Andi?",
-            "Sudah, tadi setelah beli pensil, saya juga beli es krim loh. Kalian mau?",
+            "Hai Ratna! Sedang apa kalian?",
+            "Hai Andi! Saya mau beli alat tulis untuk ujian besok. Kamu sudah beli, Andi?",
+            "Sudah, tadi setelah beli pensil, saya juga beli es krim loh. Kamu mau?",
             "Wah mau mau",
-            "Ini, masing-masing ambil 1 ya",
-            "Yeyy, makasih",
-            "Jadi sisa es krim kamu berapa, Andi?"
+            "Ini, ambil 2 ya",
+            "Yeyy, makasih. Jadi sisa es krim kamu berapa, Andi?",
         ],
-        "Questions": "Aku punya 5 Es Krim🍦 dan akan memberikan masing-masing 1 Es Krim🍦 ke Ratna dan Susi. Jadi sisa es krimku berapa?",
+        "Questions": "Aku punya 5 Es Krim🍦 dan akan memberikan 2 Es Krim🍦 ke Ratna. Apakah es krimku tersisa 3?",
+        "RAnswers": "Benar",
         "Answers": {
             "Wrong": "Es krimku tinggal 2 deh",
-            "Hint": "Masa sisa 2 es krim. Coba hitung ulang Andi, jika kamu punya 5 Es Krim🍦 dan kami ambil masing-masing 1 Es Krim🍦, maka 5 - 1 -1 apakah sama dengan 2?",
+            "Hint": "Masa sisa 2 es krim. Coba hitung ulang Andi, jika kamu punya 5 Es Krim🍦 dan aku ambil 2 Es Krim🍦, maka 5 -2 apakah sama dengan 2?",
+            "RiAnswers": "Salah",
             "End": "Kalau cara hitungmu begitu, pasti besok nilai ujianmu akan jelek"
         },
         "ConvEnd": [
@@ -75,7 +107,7 @@
         "GameClosing": ""
     },
     {
-        "id": 4,
+        "id": 5,
         "Opening": "Tak lama setelah Andi berpisah dengan Ratna dan Susi, Andi bertemu lagi dengan teman kelasnya. Kali ini dia bertemu Rani",
         "Convo": [
             "Halo Rani!",
@@ -89,10 +121,12 @@
             "Boleh dong, 6 pensil ini aku bagi 2 aja yah. Siapa tau nanti ada yang butuh lagi",
             "Ok, jadi aku dapat berapa pensil, Andi?"
         ],
-        "Questions": "Aku mempunyai 6 Pensil✏️ dan akan membaginya secara adil bersama Rani. Jadi 6 Pensil✏️ dibagi 2 sama dengan berapa?",
+        "Questions": "Aku mempunyai 6 Pensil✏️ dan akan membaginya secara adil bersama Rani. Jadi 6 Pensil✏️ dibagi 2 apakah sama dengan 3?",
+        "RAnswers": "Benar",
         "Answers": {
             "Wrong": "Masing-masing dapat 2 pensil",
             "Hint": "Coba pikir ulang, Andi. Jika kamu punya 6 Pensil✏️ dan akan dibagi ke 2 orang, maka 6 : 2 apakah sama dengan 2?",
+            "RiAnswers": "Salah",
             "End": "Aduh Andi, belajar lagi deh, biar besok ujiannya bagus"
         },
         "ConvEnd": [
@@ -101,7 +135,7 @@
         "GameClosing": "Sesampainya di rumah, Andi baru ingat kalau Bu Misel meminta dia untuk membeli buku tulis"
     },
     {
-        "id": 5,
+        "id": 6,
         "Opening": "Keesokan harinya, Andi akan membeli buku yang dipesan Bu Misel.",
         "Convo": [
             "Haloo Ibuu, saya mau beli…",
@@ -111,10 +145,12 @@
             "Oh kalau begitu saya mau beli 8 buku, Bu",
             "Jadi kamu mau beli berapa paket buku?"
         ],
-        "Questions": "Berapa paket buku yah yang harus saya bayar jika 1 Paket Buku📚 berisi 4 Buku📘 dan saya ingin membeli 8 Buku📘?",
+        "Questions": "Jika 1 Paket Buku📚 berisi 4 Buku📘 dan saya ingin membeli 8 Buku📘, apakah total paket yang harus saya bayar sama dengan 3?",
+        "RAnswers": "Salah",
         "Answers": {
             "Wrong": "3 paket buku ya, Bu?",
             "Hint": "Aduh masa 3 paket buku, dalam 1 Paket berisi 4 Buku📘 dan kamu membeli 8 Buku📘. Jadi 8 : 4, apakah sama dengan 3?",
+            "RiAnswers": "Salah",
             "End": "Jawabannya salah, coba hitung kembali, Dek"
         },
         "ConvEnd": [
@@ -125,7 +161,7 @@
         "GameClosing": ""
     },
     {
-        "id": 6,
+        "id": 7,
         "Opening": "Di toko tersebut, Andi juga melihat ada permen yang dijual.",
         "Convo": [
             "Kalau permen ini harganya berapa, Bu?",
@@ -134,9 +170,11 @@
             "Jadi totalnya kamu dapat 10 permen?"
         ],
         "Questions": "Hmm…jika harga 3 Permen🍬 = Rp1.000 dan saya membeli Rp3.000, apakah saya akan mendapatkan 10 permen?",
+        "RAnswers": "Salah",
         "Answers": {
             "Wrong": "Wah iya dapat 10 permen, Bu. Kalau begitu saya pulang dulu, Bu. Dadah…",
             "Hint": "Tunggu tunggu, sepertinya saya salah hitung, Dek. Kan 3 Permen🍬 itu harganya Rp1.000 dan kamu membeli Rp3.000. Jadi 3 x 3 apakah sama dengan 10?",
+            "RiAnswers": "Salah",
             "End": "Belajar yang lebih giat lagi yah"
         },
         "ConvEnd": [
@@ -147,7 +185,7 @@
         "GameClosing": ""
     },
     {
-        "id": 7,
+        "id": 8,
         "Opening": "",
         "Convo": [
             "Boleh nggak ditambahin permen lagi, Bu? Hehe",
@@ -155,10 +193,12 @@
             "Wah terima kasih, Bu. Senang sekali rasanya dapat tambahan permen",
             "Jadi total permen kamu ada berapa?"
         ],
-        "Questions": "Hmmm…jika saya mempunyai 9 Permen🍬 dan ditambah 3 Permen🍬 lagi, berapa permen yang saya punya sekarang?",
+        "Questions": "Hmmm…jika saya mempunyai 9 Permen🍬 dan ditambah 3 Permen🍬 lagi, apakah total permen yang saya punya sekarang sama dengan 12?",
+        "RAnswers": "Benar",
         "Answers": {
             "Wrong": "Totalnya ada 13 permen🍬, Bu",
             "Hint": "Salah itu, awalnya kan kamu punya 9 Permen🍬, terus saya tambahin 3 Permen🍬. Jadi kamu punya 9 + 3 Permen, apakah hasilnya sama dengan 13?",
+            "RiAnswers": "Salah",
             "End": "Coba buka lagi buku matematikanya"
         },
         "ConvEnd": [
@@ -171,7 +211,7 @@
     },
     
     {
-        "id": 8,
+        "id": 9,
         "Opening": "Tepat setelah keluar dari toko, Andi melihat kakaknya yang sedang mengendarai motor. Kakaknya pun berhenti tepat di depan Andi dan mereka pun pulang bersama-sama. Dalam perjalanan, mereka berbincang",
         "Convo": [
             "Saya tadi beli 9 permen, Kak. Terus ditambahin sama ibunya, jadi saya punya 12 permen",
@@ -179,10 +219,12 @@
             "Pasti boleh dong, Kak. Bagaimana kalau 12 permen ini dibagi 2 saja, Kak?",
             "Wahh boleh dong, jadi kakak dapat berapa permen?"
         ],
-        "Questions": "Kalau 12 Permen🍬 yang saya punya akan dibagi rata ke 2 orang, maka masing-masing orang dapat berapa permen yah?",
+        "Questions": "Kalau 12 Permen🍬 yang saya punya akan dibagi rata ke 2 orang, apakah masing-masing orang dapat 7 permen yah?",
+        "RAnswers": "Salah",
         "Answers": {
             "Wrong": "Kakak dapat 7 permen, saya juga dapat 7 permen",
             "Hint": "Apakah tidak kebanyakan, Dek? Coba hitung ulang, jika kamu punya 12 Permen🍬 dan akan dibagi secara rata kepada 2 orang, maka 12 : 2 apakah sama dengan 7?",
+            "RiAnswers": "Salah",
             "End": "Aduh Andi, coba hitung lagi"
         },
         "ConvEnd": [

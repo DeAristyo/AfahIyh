@@ -6,6 +6,7 @@ struct QueenJson: Codable{
     let Opening: String
     let Convo:  [String]
     let Questions: String
+    let RAnswers: String
     let Answers: Answers
     let ConvEnd: [String]
     let GameClosing: String
@@ -16,7 +17,7 @@ struct QueenJson: Codable{
 }
 //
 struct Answers: Codable {
-    let Wrong, Hint, End: String
+    let Wrong, Hint, End, RiAnswers: String
 }
 
 

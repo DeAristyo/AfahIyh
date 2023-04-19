@@ -1,13 +1,13 @@
 //
-//  GameDialoque.swift
+//  EndConvo.swift
 //  AfahIyh
 //
-//  Created by Dimas Aristyo Rahadian on 18/04/23.
+//  Created by Dimas Aristyo Rahadian on 19/04/23.
 //
 
 import SwiftUI
 
-struct GameDialoque: View {
+struct EndConvo: View {
     
     @State private var navigateToIntro : Bool = false
     @State private var navigateToQuestion : Bool = false
@@ -74,7 +74,7 @@ struct GameDialoque: View {
     var body: some View {
         let BG = scene == 1 || scene == 5 || scene == 6 || scene == 7 ? "KoperasiBG" : "Background"
         
-        let convo = AllData[indeks].Convo
+        let endConvo = AllData[indeks].ConvEnd
         let questions = AllData[indeks].Questions
         
         ZStack {
@@ -112,7 +112,7 @@ struct GameDialoque: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .fill(Color.yellow)
                         .overlay(
-                            Text(convo[words])
+                            Text(endConvo[words])
                                 .font(.system(size: 26 )).multilineTextAlignment(.center).padding(15)
                         )
                     )
@@ -132,33 +132,26 @@ struct GameDialoque: View {
                 }else{
                     RoundedRectangle(cornerRadius: 20)
                         .fill(Color.white)
-                        .frame(width: 120,height: 40)
+                        .frame(width: 160,height: 40)
                         .shadow(radius:3)
                         .overlay(
                             Text(charName)
-                                .font(.system(size:14))
+                                .font(.system(size:18))
                                 .fontWeight(.bold))
                         .offset(x:185,y:35)
                 }
             }
         }
         .onTapGesture {
-            if words < convo.count-1{
+            if words < endConvo.count-1{
                 kalimat()
                 print("Masih di kalimat ya bro")
-            }else if questions == ""{
+            }else{
                 print("Go To Intro")
                 words = 0
                 indeks += 1
                 path.removeAll()
-            }else{
-                print("Go To Question")
-                self.navigateToQuestion.toggle()
-                words = 0
             }
-        }
-        .navigationDestination(isPresented: $navigateToQuestion) {
-            QuestionView(indeks: $indeks, path: $path).navigationBarBackButtonHidden()
         }
     }
     
@@ -168,8 +161,8 @@ struct GameDialoque: View {
     }
 }
 
-struct GameDialoque_Previews: PreviewProvider {
+struct EndConvo_Previews: PreviewProvider {
     static var previews: some View {
-        GameDialoque(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeRight)
+        EndConvo(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeRight)
     }
 }

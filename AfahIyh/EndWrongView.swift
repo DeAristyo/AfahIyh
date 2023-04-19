@@ -1,13 +1,13 @@
 //
-//  GameDialoque.swift
+//  RightDialoque.swift
 //  AfahIyh
 //
-//  Created by Dimas Aristyo Rahadian on 18/04/23.
+//  Created by Dimas Aristyo Rahadian on 19/04/23.
 //
 
 import SwiftUI
 
-struct GameDialoque: View {
+struct EndWrongView: View {
     
     @State private var navigateToIntro : Bool = false
     @State private var navigateToQuestion : Bool = false
@@ -16,7 +16,7 @@ struct GameDialoque: View {
     @State private var scene : Int = 0
     
     @Binding var indeks: Int
-    @Binding var path : [Int]
+    @Binding var path: [Int]
     
     let AllData: [QueenJson] = QueenJson.allData
     var getNumber: Int{
@@ -74,8 +74,7 @@ struct GameDialoque: View {
     var body: some View {
         let BG = scene == 1 || scene == 5 || scene == 6 || scene == 7 ? "KoperasiBG" : "Background"
         
-        let convo = AllData[indeks].Convo
-        let questions = AllData[indeks].Questions
+        let endWrong = AllData[indeks].Answers.End
         
         ZStack {
             Image(BG)
@@ -84,25 +83,14 @@ struct GameDialoque: View {
                 .offset(x: 0, y: 60)
             
             HStack{
-                if nama {
-                    Image("AndiHalf")
-                        .scaleEffect(0.3)
-                        .offset(x:25, y: -25)
-                    Image(secondChar)
-                        .scaleEffect(0.2)
-                        .scaleEffect(x: -1)
-                        .brightness(-0.3)
-                }else{
-                    Image("AndiHalf")
-                        .scaleEffect(0.2)
-                        .brightness(-0.3)
-                        .offset(x:25, y: -25)
-                    Image(secondChar)
-                        .scaleEffect(0.3)
-                        .scaleEffect(x: -1)
-                        .offset(x:0, y:-25)
-                    
-                }
+                Image("AndiHalf")
+                    .scaleEffect(0.2)
+                    .brightness(-0.3)
+                    .offset(x:25, y: -25)
+                Image(secondChar)
+                    .scaleEffect(0.3)
+                    .scaleEffect(x: -1)
+                    .offset(x:0, y:-25)
                 
             }
             HStack{
@@ -112,53 +100,29 @@ struct GameDialoque: View {
                     .overlay(RoundedRectangle(cornerRadius: 20)
                         .fill(Color.yellow)
                         .overlay(
-                            Text(convo[words])
+                            Text(endWrong)
                                 .font(.system(size: 26 )).multilineTextAlignment(.center).padding(15)
                         )
                     )
             }.offset(x:0,y:101)
             
             HStack{
-                if nama{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .frame(width: 120,height: 40)
-                        .shadow(radius:5, x: 0, y:2)
-                        .overlay(
-                            Text("ANDI")
-                                .font(.system(size:18))
-                                .fontWeight(.bold))
-                        .offset(x:-185,y:35)
-                }else{
-                    RoundedRectangle(cornerRadius: 20)
-                        .fill(Color.white)
-                        .frame(width: 120,height: 40)
-                        .shadow(radius:3)
-                        .overlay(
-                            Text(charName)
-                                .font(.system(size:14))
-                                .fontWeight(.bold))
-                        .offset(x:185,y:35)
-                }
+                RoundedRectangle(cornerRadius: 20)
+                    .fill(Color.white)
+                    .frame(width: 160,height: 40)
+                    .shadow(radius:3)
+                    .overlay(
+                        Text(charName)
+                            .font(.system(size:18))
+                            .fontWeight(.bold))
+                    .offset(x:185,y:35)
             }
         }
         .onTapGesture {
-            if words < convo.count-1{
-                kalimat()
-                print("Masih di kalimat ya bro")
-            }else if questions == ""{
-                print("Go To Intro")
-                words = 0
-                indeks += 1
-                path.removeAll()
-            }else{
-                print("Go To Question")
-                self.navigateToQuestion.toggle()
-                words = 0
-            }
+            self.navigateToQuestion.toggle()
         }
         .navigationDestination(isPresented: $navigateToQuestion) {
-            QuestionView(indeks: $indeks, path: $path).navigationBarBackButtonHidden()
+            GameOver(path: $path).navigationBarBackButtonHidden()
         }
     }
     
@@ -168,8 +132,8 @@ struct GameDialoque: View {
     }
 }
 
-struct GameDialoque_Previews: PreviewProvider {
+struct EndWrongView_Previews: PreviewProvider {
     static var previews: some View {
-        GameDialoque(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeRight)
+        EndWrongView(indeks: .constant(0), path: .constant([])).previewInterfaceOrientation(.landscapeLeft)
     }
 }
